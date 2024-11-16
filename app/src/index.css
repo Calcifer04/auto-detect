@@ -1,0 +1,71 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* index.css */
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+}
+
+html, body, #root {
+    height: 100%;
+}
+
+.bg-gray-dotted {
+    background-color: #232323;
+    background-image: radial-gradient(circle, rgba(255, 255, 255, 0.14) 2px, transparent 1px);
+    background-size: 20px 20px;
+}
+
+.header {
+    font-family: "Danfo", serif;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: normal;
+    font-variation-settings:
+    "ELSH" 0;
+    background: linear-gradient(90deg, #fc5c7d 0%, #8243ff 100%);
+    -webkit-background-clip: text;
+    color: transparent;
+}
+
+.overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: rgba(255, 255, 255, 0.8); 
+    z-index: 999;
+}
+
+.wheel-wrapper {
+    width: 100px;
+    height: 100px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.rotating {
+    animation: rotate 1s linear infinite;
+    transform-origin: center center;
+    width: 100px;
+    height: 100px;
+}
+
+@keyframes rotate {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+
