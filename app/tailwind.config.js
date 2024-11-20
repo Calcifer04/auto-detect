@@ -3,9 +3,17 @@ export default {
   content: [
     "./src/**/*.{js,jsx,ts,tsx}",
   ],
+  darkMode: 'class',
   theme: {
-    extend: {},
+    extend: {
+      boxShadow: {
+        fontFamily: {
+          hubot: ['Hubot Sans', 'sans-serif'], 
+      },
+    },
   },
   plugins: [],
+  },
 }
+
 

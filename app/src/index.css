@@ -2,6 +2,27 @@
 @tailwind components;
 @tailwind utilities;
 
+/* Faster transitions for text colors */
+* {
+  transition: background-color 50ms ease-in-out,
+              border-color 50ms ease-in-out;
+}
+
+/* Separate, faster transition for text colors */
+*:not(button) {
+  transition: color 50ms ease-in-out;
+}
+
+/* Optional: If you want to remove transitions from certain elements */
+.no-transition {
+  transition: none !important;
+}
+
+/* Dark mode class */
+.dark {
+  color-scheme: dark;
+}
+
 /* index.css */
 
 body {
@@ -54,31 +75,18 @@ html, body, #root {
 }
 
 .loading-spinner {
-  width: 40px;
-  height: 40px;
+  width: 50px;
+  height: 50px;
+  border: 3px solid rgba(0, 0, 0, 0.1);
   border-radius: 50%;
-  position: relative;
-  background: conic-gradient(
-    from 0deg,
-    transparent 0%,
-    transparent 10%,
-    #8b5cf6 10%,
-    #f43f5e 90%,
-    transparent 90%,
-    transparent 100%
-  );
-  animation: spin 0.8s linear infinite;
+  border-top-color: #6d28d9;
+  animation: spin 1s ease-in-out infinite;
 }
 
-.loading-spinner::before {
-  content: '';
-  position: absolute;
-  top: 3px;
-  left: 3px;
-  right: 3px;
-  bottom: 3px;
-  background: white;
-  border-radius: 50%;
+/* Add dark mode styles */
+.dark .loading-spinner {
+  border-color: rgba(255, 255, 255, 0.1);
+  border-top-color: #8b5cf6;
 }
 
 @keyframes spin {
@@ -132,5 +140,14 @@ html, body, #root {
 
 .slide-in {
   animation: slideIn 1s ease-out forwards;
+}
+
+.high-z-index {
+  z-index: 10;
+}
+
+.image-container {
+  position: relative;
+  z-index: 1;
 }
 
